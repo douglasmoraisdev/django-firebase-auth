@@ -135,7 +135,7 @@ class AbstractAuthentication(authentication.BaseAuthentication):
         )[0]
         avatar_url = authenticated_user.get("picture")
         uid = authenticated_user.get("uid")
-        full_name = authenticated_user.get("name")
+        full_name = authenticated_user.get("name", "")
         first_name = full_name.split(" ")[0]
         last_name = (
             " ".join(full_name.split(" ")[1:]) if len(full_name.split(" ")) > 1 else ""
